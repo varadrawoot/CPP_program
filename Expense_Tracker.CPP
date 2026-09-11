@@ -4,10 +4,10 @@
     so that we can track our expenses and set a spending limit.
 
     Concepts used:
-    1) Multilevel Inheritance
-    2) Constructor
-    3) Encapsulation
-    4) Header files like vector and iomanip
+    
+    1) Constructor
+    2) Encapsulation
+    3) Header files like  iomanip
 */
 
 #include <iostream>
