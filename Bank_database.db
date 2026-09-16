@@ -1,0 +1,9 @@
++------------+----------------+------------+----------+----------------------+
+| ACCOUNT NO | HOLDER NAME    | BALANCE(Rs)| TYPE     | EXTRA DETAILS        |
++------------+----------------+------------+----------+----------------------+
+| 101        | Varad Rawoot   | 14900.00   | Savings  | Rate:4%,MinBal:1000  |
+| 102        | KrishnaGurav   | 20000.00   | Savings  | Rate:4%,MinBal:1000  |
+| 103        | AtharvaTakle   | 30000.00   | Savings  | Rate:4%,MinBal:2000  |
+| 104        | AnishTakle     | 34000.00   | Savings  | Rate:4%,MinBal:10000 |
+| 105        | Berlin         | 500000.00  | Savings  | Rate:5%,MinBal:2000  |
++------------+----------------+------------+----------+----------------------+
