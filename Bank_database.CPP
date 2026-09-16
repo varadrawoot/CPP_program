@@ -5,13 +5,13 @@
     Database File: Bank_database.db (Saved in Visual Table Format)
 
     OOP Concepts Used:
-    1. Hierarchical Inheritance: Base (BankAccount) -> Derived (SavingsAccount, CurrentAccount)
-    2. Protected Data Members  : accountNo, name, balance, accountType
-    3. Constructors            : Base and Derived parameterized constructors
-    4. Function Overriding     : withdraw() and display() in child classes
-    5. Encapsulation           : Protected/private data members accessed via methods
-    6. MySQL Commands          : CREATE TABLE, INSERT INTO, SELECT, UPDATE, DELETE
-    7. Database File           : Saves and reads 'Bank_database.db' in full Table format
+    1. Hierarchical Inheritance
+    2. Protected Data Members  
+    3. Constructors            
+    4. Function Overriding     
+    5. Encapsulation           
+    6. MySQL Commands          
+    7. Database File           
     ===========================================================================
 */
 
