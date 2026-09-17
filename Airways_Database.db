@@ -1,0 +1,8 @@
++-----------+----------------------+---------------+---------------+------------+---------------+
+| TICKET NO | PASSENGER NAME       | SOURCE        | DESTINATION   | FARE(Rs)   | TYPE          |
++-----------+----------------------+---------------+---------------+------------+---------------+
+| 101       | Varad Rawoot         | Mumbai        | Delhi         | 5000.00    | Domestic      |
+| 102       | Krishna Gurav        | Mumbai        | London        | 50000.00   | International |
+| 103       | John cena            | Land O lakes  | Australia     | 60000.00   | International |
+| 104       | Oliveira             | Tokyo         | Berlin        | 80000.00   | International |
++-----------+----------------------+---------------+---------------+------------+---------------+
