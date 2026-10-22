@@ -1,0 +1,6 @@
+RollNo	Name	Total	Percentage	Grade
+--------------------------------------------------
+101	Alice Smith	458	91.6%	A
+102	Bob Johnson	400	80%	B
+103	Charlie Brown	340	68%	C
+104	David Miller	250	50%	D

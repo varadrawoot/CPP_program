@@ -1,0 +1,65 @@
+----------------------------------------
+          ELECTRICITY BILL
+----------------------------------------
+Consumer No      : 101
+Consumer Name    : Krishna
+Previous Reading : 200
+Current Reading  : 300
+Units Consumed   : 100
+Energy Charge    : Rs. 350.00
+Fixed Charge     : Rs. 50.00
+Total Bill       : Rs. 400.00
+----------------------------------------
+
+----------------------------------------
+          ELECTRICITY BILL
+----------------------------------------
+Consumer No      : 102
+Consumer Name    : Piyush
+Previous Reading : 20
+Current Reading  : 30
+Units Consumed   : 10
+Energy Charge    : Rs. 35.00
+Fixed Charge     : Rs. 50.00
+Total Bill       : Rs. 85.00
+----------------------------------------
+
+----------------------------------------
+          ELECTRICITY BILL
+----------------------------------------
+Consumer No      : 103
+Consumer Name    : Gaurav
+Previous Reading : 45
+Current Reading  : 55
+Units Consumed   : 10
+Energy Charge    : Rs. 35.00
+Fixed Charge     : Rs. 50.00
+Total Bill       : Rs. 85.00
+----------------------------------------
+
+----------------------------------------
+          ELECTRICITY BILL
+----------------------------------------
+Consumer No      : 104
+Consumer Name    : Hareshwar
+Previous Reading : 90
+Current Reading  : 100
+Units Consumed   : 10
+Energy Charge    : Rs. 35.00
+Fixed Charge     : Rs. 50.00
+Total Bill       : Rs. 85.00
+----------------------------------------
+
+----------------------------------------
+          ELECTRICITY BILL
+----------------------------------------
+Consumer No      : 0
+Consumer Name    : 
+Previous Reading : 0
+Current Reading  : 0
+Units Consumed   : 0
+Energy Charge    : Rs. 0.00
+Fixed Charge     : Rs. 50.00
+Total Bill       : Rs. 50.00
+----------------------------------------
+

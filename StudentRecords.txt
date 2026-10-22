@@ -1,0 +1,7 @@
+==================== STUDENT RECORDS ====================
+Name                Roll No   PercentageGrade   
+--------------------------------------------------------
+ohn Smith           1         95.00     A       
+Alison parker       2         84.20     B       
+Thomas wilson       3         63.80     D       
+Jimmy witson        4         47.00     E       
