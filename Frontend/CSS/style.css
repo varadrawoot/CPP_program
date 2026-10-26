@@ -1,0 +1,695 @@
+:root {
+    --bg: #070809;
+    --panel: #0b0d10;
+    --card: #0b0c0f;
+    --red: #ff263b;
+    --red-dark: #8f1424;
+    --text: #e8edf8;
+    --muted: #91a0bc;
+    --green: #35dc87;
+    --border: #55202a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter", Arial, sans-serif;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* TOP BAR */
+
+.topbar {
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 12px 22px;
+    background: #090a0c;
+    border-bottom: 1px solid var(--red-dark);
+}
+
+.brand,
+.top-actions,
+.terminal-header,
+.terminal-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.brand-icon {
+    width: 46px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border: 2px solid var(--red);
+    border-radius: 8px;
+    color: var(--red);
+    font: 600 22px "Fira Code", monospace;
+    box-shadow: 0 0 12px #ff263b22;
+}
+
+.brand h1 {
+    font-size: 27px;
+    letter-spacing: -1px;
+}
+
+.brand h1 span {
+    color: var(--red);
+}
+
+.brand small {
+    font-weight: 600;
+    color: #bdc5d7;
+}
+
+.brand-subtitle {
+    border-left: 1px solid #424550;
+    padding-left: 18px;
+    margin-left: 8px;
+    color: var(--muted);
+    font: 12px "Fira Code", monospace;
+    letter-spacing: 1px;
+}
+
+.connection {
+    color: var(--green);
+    font-size: 13px;
+}
+
+.green-dot {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    background: var(--green);
+    border-radius: 50%;
+    margin-right: 7px;
+}
+
+.username {
+    color: #d4daea;
+    font-size: 14px;
+}
+
+.logout-btn,
+.terminal-btn {
+    padding: 10px 14px;
+    background: transparent;
+    color: var(--red);
+    border: 1px solid var(--red);
+    border-radius: 7px;
+}
+
+.logout-btn:hover,
+.terminal-btn:hover {
+    background: #ff263b18;
+}
+
+/* PAGE LAYOUT */
+
+.app-layout {
+    display: grid;
+    grid-template-columns: 255px minmax(0, 1fr);
+    min-height: calc(100vh - 72px);
+}
+
+.sidebar {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 26px 14px 100px;
+    background: #090b0e;
+    border-right: 1px solid #17191e;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 14px 15px;
+    color: #b8c4dc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.nav-item > span {
+    min-width: 23px;
+    color: #a9b6d2;
+    font-size: 22px;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    color: var(--red);
+    background: linear-gradient(90deg, #59121d, #251015);
+}
+
+.nav-item.active {
+    border-left: 4px solid var(--red);
+}
+
+.nav-item.active > span {
+    color: var(--red);
+}
+
+.sidebar-heading {
+    margin: 20px 10px 8px;
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.distro {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 8px;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    color: var(--text);
+    text-align: left;
+}
+
+.distro:hover,
+.distro.selected {
+    background: #15181d;
+    border-color: #242832;
+}
+
+.distro-icon {
+    width: 37px;
+    height: 37px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.ubuntu {
+    color: white;
+    background: #d94431;
+}
+
+.kali {
+    color: white;
+    background: #355fc0;
+}
+
+.distro-info {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.distro-info strong {
+    font-size: 13px;
+}
+
+.distro-info small {
+    color: #77829a;
+    font-size: 10px;
+}
+
+.online-status,
+.offline-status {
+    white-space: nowrap;
+    font-size: 10px;
+}
+
+.online-status {
+    color: var(--green);
+}
+
+.offline-status {
+    color: #aab3c8;
+}
+
+.sidebar-footer {
+    position: absolute;
+    bottom: 24px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: var(--red);
+    font: 12px "Fira Code", monospace;
+}
+
+.footer-terminal {
+    display: block;
+    margin-top: 18px;
+    font-size: 25px;
+}
+
+/* MAIN CONTENT */
+
+.main-content {
+    min-width: 0;
+    padding: 15px 20px 25px;
+}
+
+.welcome-banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    min-height: 212px;
+    padding: 30px;
+    overflow: hidden;
+    border: 1px solid var(--red-dark);
+    border-radius: 7px;
+    background:
+        radial-gradient(ellipse at 25% 50%, #401019 0%, transparent 48%),
+        linear-gradient(100deg, #10090c, #08090b 72%);
+}
+
+.banner-code {
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    color: #c51b35;
+    opacity: 0.48;
+    font: 12px/2 "Fira Code", monospace;
+    letter-spacing: 3px;
+    overflow: hidden;
+}
+
+.hacker-symbol {
+    position: absolute;
+    left: 11%;
+    bottom: -40px;
+    color: #17080d;
+    font: 900 150px "Fira Code", monospace;
+    text-shadow: 0 0 18px #e51b3c55;
+    pointer-events: none;
+}
+
+.welcome-text {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+}
+
+.welcome-text h2 {
+    color: #ff394e;
+    font: 800 clamp(30px, 3vw, 54px) "Fira Code", monospace;
+    text-shadow: 0 0 15px #ff263b40;
+}
+
+.welcome-text h3 {
+    margin-top: 2px;
+    color: var(--red);
+    font-size: clamp(19px, 2vw, 30px);
+    letter-spacing: 2px;
+}
+
+.welcome-text p {
+    margin-top: 14px;
+    color: #e0e5f1;
+    font: 14px "Fira Code", monospace;
+}
+
+.banner-terminal {
+    color: var(--red);
+    font: 600 46px "Fira Code", monospace;
+    border: 3px solid var(--red);
+    border-radius: 12px;
+    padding: 14px;
+    box-shadow: 0 0 20px #ff263b35;
+}
+
+.banner-quote {
+    color: #ff394e;
+    text-align: center;
+    font: 12px/1.7 "Fira Code", monospace;
+}
+
+/* WORKSPACE CARDS */
+
+.workspace-section {
+    padding: 26px 14px 22px;
+}
+
+.section-heading {
+    margin-bottom: 20px;
+}
+
+.section-heading h2 {
+    font-size: 19px;
+    letter-spacing: 0.5px;
+}
+
+.section-heading p {
+    margin-top: 8px;
+    color: #b9c5dc;
+    font-size: 13px;
+}
+
+.section-heading p::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 3px;
+    margin: 0 9px 3px 0;
+    background: var(--red);
+}
+
+.workspace-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.workspace-card {
+    position: relative;
+    min-height: 166px;
+    padding: 17px;
+    background: linear-gradient(145deg, #0b0c0f, #08090b);
+    border: 1px solid #48202a;
+    border-radius: 10px;
+    color: var(--text);
+    text-align: left;
+    transition: border-color 0.2s, transform 0.2s,
+                box-shadow 0.2s;
+}
+
+.workspace-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--red);
+    box-shadow: 0 5px 22px #ff263b15;
+}
+
+.card-icon {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--red);
+    font: 600 32px "Fira Code", monospace;
+}
+
+.workspace-card strong {
+    display: block;
+    font-size: 14px;
+}
+
+.workspace-card p {
+    margin-top: 8px;
+    color: #a9b7d0;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.card-arrow {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    display: grid;
+    place-items: center;
+    width: 23px;
+    height: 23px;
+    border: 1px solid var(--red);
+    border-radius: 50%;
+    color: var(--red);
+}
+
+/* TERMINAL */
+
+.terminal-section {
+    padding: 12px;
+    background: #090a0c;
+    border: 1px solid var(--red-dark);
+    border-radius: 9px;
+}
+
+.terminal-header {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 3px 12px;
+    border-bottom: 1px solid #27252b;
+}
+
+.terminal-header h2 {
+    color: var(--red);
+    font-size: 15px;
+}
+
+.terminal-header h2 span {
+    font: 600 23px "Fira Code", monospace;
+}
+
+.terminal-actions {
+    gap: 10px;
+}
+
+.terminal-actions select {
+    min-width: 135px;
+    padding: 9px 12px;
+    background: #101216;
+    color: var(--text);
+    border: 1px solid #343744;
+    border-radius: 7px;
+}
+
+.terminal-btn {
+    padding: 9px 12px;
+    font-size: 12px;
+}
+
+.terminal-output {
+    min-height: 250px;
+    max-height: 430px;
+    overflow: auto;
+    padding: 14px 8px;
+    background: #020303;
+    border: 1px solid #38202a;
+    border-radius: 8px;
+    color: #c7d4e8;
+    font: 13px/1.8 "Fira Code", monospace;
+    overflow-wrap: anywhere;
+}
+
+.terminal-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.prompt {
+    color: #35e58b;
+    font-weight: 600;
+}
+
+.file-list {
+    color: #269dff;
+}
+
+.cursor {
+    color: #d9e4f5;
+    animation: blink 1s steps(2, start) infinite;
+}
+
+.terminal-input-area {
+    display: flex;
+    gap: 7px;
+    margin-top: 12px;
+}
+
+.terminal-input-area input {
+    flex: 1;
+    min-width: 0;
+    padding: 14px 18px;
+    background: #0a0b0e;
+    border: 1px solid #57303a;
+    border-radius: 8px;
+    outline: none;
+    color: white;
+    font: 13px "Fira Code", monospace;
+}
+
+.terminal-input-area input:focus {
+    border-color: var(--red);
+    box-shadow: 0 0 12px #ff263b12;
+}
+
+.terminal-input-area button {
+    min-width: 48px;
+    background: #d71930;
+    border: 1px solid var(--red);
+    border-radius: 7px;
+    color: white;
+    font: 600 17px "Fira Code", monospace;
+}
+
+.terminal-input-area button:hover {
+    background: #ff263b;
+}
+
+.page-footer {
+    padding: 22px 5px 0;
+    color: #666e80;
+    text-align: center;
+    font: 10px "Fira Code", monospace;
+    letter-spacing: 1px;
+}
+
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
+
+/* RESPONSIVE LAYOUT */
+
+@media (max-width: 1250px) {
+    .workspace-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .brand-subtitle {
+        display: none;
+    }
+
+    .banner-quote {
+        display: none;
+    }
+}
+
+@media (max-width: 850px) {
+    .app-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: static;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 12px;
+        border-right: none;
+        border-bottom: 1px solid #25202a;
+    }
+
+    .sidebar-heading,
+    .sidebar-footer {
+        display: none;
+    }
+
+    .distro {
+        min-width: 0;
+    }
+
+    .main-content {
+        padding: 12px;
+    }
+
+    .welcome-banner {
+        min-height: 185px;
+        padding: 20px;
+    }
+
+    .banner-code,
+    .banner-terminal {
+        display: none;
+    }
+}
+
+@media (max-width: 560px) {
+    .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .top-actions {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .brand h1 {
+        font-size: 22px;
+    }
+
+    .workspace-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .workspace-card {
+        min-height: 155px;
+        padding: 12px;
+    }
+
+    .workspace-section {
+        padding: 22px 2px;
+    }
+
+    .welcome-text h2 {
+        font-size: 28px;
+    }
+
+    .welcome-text h3 {
+        font-size: 18px;
+    }
+
+    .welcome-text p {
+        font-size: 11px;
+        line-height: 1.8;
+    }
+
+    .terminal-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .terminal-actions {
+        flex-wrap: wrap;
+    }
+
+    .terminal-output {
+        min-height: 220px;
+        font-size: 11px;
+    }
+    
+.terminal-result {
+    margin: 4px 0 12px;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    color: #c7d4e8;
+    font: 13px/1.8 "Fira Code", monospace;
+}
+
+}
