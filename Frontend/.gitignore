@@ -1,0 +1,22 @@
+# Compiled programs
+*.exe
+*.o
+*.obj
+
+# Build output
+build/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+
+# Local environment secrets
+.env
+
+# Editor and operating system files
+.DS_Store
+Thumbs.db
